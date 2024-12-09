@@ -18,13 +18,14 @@ export default function HeroSection({ isMusicPlaying, setIsMusicPlaying }: HeroS
     const { play, pause } = useAudio('/jarla-bday.mp3')
 
     useEffect(() => {
+        setIsMusicPlaying(true);
+
         const wordTimers = words.map((_, index) => {
             return setTimeout(() => setCurrentWordIndex(index), (index + 1) * 1000)
         })
 
         const bearTimer = setTimeout(() => {
             setShowBear(true)
-            setIsMusicPlaying(true)
         }, (words.length + 1) * 1000)
 
         return () => {
