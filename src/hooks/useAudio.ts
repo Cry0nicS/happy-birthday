@@ -14,11 +14,19 @@ export function useAudio(src: string) {
     }, [src]);
 
     const play = () => {
-        audioRef.current?.play();
+        if (audioRef.current && audioRef.current.paused) {
+            audioRef.current.play().catch(error => {
+                if (error.name !== 'AbortError') {
+                    console.error('Error playing audio:', error);
+                }
+            });
+        }
     };
 
     const pause = () => {
-        audioRef.current?.pause();
+        if (audioRef.current && !audioRef.current.paused) {
+            audioRef.current.pause();
+        }
     };
 
     return { play, pause, audioRef };
