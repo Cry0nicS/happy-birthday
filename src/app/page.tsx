@@ -15,7 +15,7 @@ export default function Home() {
             {isPlaying && <Snowfall />}
             <div className="flex-grow flex items-center justify-center w-full">
                 {isPlaying ? (
-                    <HeroSection isMusicPlaying={isMusicPlaying} setIsMusicPlaying={setIsMusicPlaying} />
+                    <HeroSection isMusicPlaying={isMusicPlaying} setIsMusicPlaying={setIsMusicPlaying} setIsPlaying={setIsPlaying} />
                 ) : (
                     <div className="flex flex-col">
                         <div className="w-full flex justify-center mb-4 px-4">
@@ -39,4 +39,3 @@ export default function Home() {
         </main>
     )
 }
-

@@ -12,9 +12,10 @@ const words = ['Happy', 'birthday,', 'Jarla!']
 interface HeroSectionProps {
     isMusicPlaying: boolean;
     setIsMusicPlaying: (isPlaying: boolean) => void;
+    setIsPlaying: (isPlaying: boolean) => void;
 }
 
-export default function HeroSection({ isMusicPlaying, setIsMusicPlaying }: HeroSectionProps) {
+export default function HeroSection({ isMusicPlaying, setIsMusicPlaying, setIsPlaying }: HeroSectionProps) {
     const [currentWordIndex, setCurrentWordIndex] = useState(-1)
     const [showBear, setShowBear] = useState(false)
     const { play, pause, audioRef } = useAudio('/jarla-bday.mp3')
@@ -43,6 +44,22 @@ export default function HeroSection({ isMusicPlaying, setIsMusicPlaying }: HeroS
             pause()
         }
     }, [isMusicPlaying, play, pause])
+
+    useEffect(() => {
+        if (!audioRef.current) return;
+
+        const handleEnded = () => {
+            setIsPlaying(false);
+        };
+
+        audioRef.current.addEventListener('ended', handleEnded);
+
+        return () => {
+            if (audioRef.current) {
+                audioRef.current.removeEventListener('ended', handleEnded);
+            }
+        };
+    }, [audioRef, setIsPlaying]);
 
     return (
         <div className="text-center z-10 relative h-full w-full flex flex-col items-center justify-center">
@@ -74,4 +91,3 @@ export default function HeroSection({ isMusicPlaying, setIsMusicPlaying }: HeroS
         </div>
     )
 }
-
