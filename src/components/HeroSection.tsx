@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import DancingPolarBear from './DancingPolarBear'
 import { useAudio } from '@/hooks/useAudio'
+import {lyrics} from "@/lib/utils";
+import LyricsDisplay from "@/components/LyricsDisplay";
 
 const words = ['Happy', 'birthday,', 'Jarla!']
 
@@ -15,7 +17,7 @@ interface HeroSectionProps {
 export default function HeroSection({ isMusicPlaying, setIsMusicPlaying }: HeroSectionProps) {
     const [currentWordIndex, setCurrentWordIndex] = useState(-1)
     const [showBear, setShowBear] = useState(false)
-    const { play, pause } = useAudio('/jarla-bday.mp3')
+    const { play, pause, audioRef } = useAudio('/jarla-bday.mp3')
 
     useEffect(() => {
         setIsMusicPlaying(true);
@@ -68,6 +70,7 @@ export default function HeroSection({ isMusicPlaying, setIsMusicPlaying }: HeroS
             >
                 <DancingPolarBear />
             </motion.div>
+            <LyricsDisplay audioRef={audioRef} lyrics={lyrics} />
         </div>
     )
 }
