@@ -14,17 +14,17 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Happy Birthday, Jarla!",
-  description: "A special message to celebrate Jarla's birthday 🎉.",
+  title: "Happy Birthday!",
+  description: "A special message to celebrate your birthday 🎉.",
   openGraph: {
-    title: "Happy Birthday, Jarla!",
-    description: "A special message to celebrate Jarla's birthday 🎉.",
+    title: "Happy Birthday!",
+    description: "A special message to celebrate your birthday 🎉.",
     images: [
       {
         url: "/banner.webp", // Add this image to the public folder
         width: 1200,
         height: 630,
-        alt: "Happy Birthday, Jarla! 🎉",
+        alt: "Happy Birthday! 🎉",
       },
     ],
   },

@@ -7,7 +7,7 @@ import { useAudio } from '@/hooks/useAudio'
 import {lyrics} from "@/lib/utils";
 import LyricsDisplay from "@/components/LyricsDisplay";
 
-const words = ['Happy', 'birthday,', 'Jarla!']
+const words = ['Happy', 'Birthday!', '🎂']
 
 interface HeroSectionProps {
     isMusicPlaying: boolean;
@@ -18,7 +18,7 @@ interface HeroSectionProps {
 export default function HeroSection({ isMusicPlaying, setIsMusicPlaying, setIsPlaying }: HeroSectionProps) {
     const [currentWordIndex, setCurrentWordIndex] = useState(-1)
     const [showBear, setShowBear] = useState(false)
-    const { play, pause, audioRef } = useAudio('/jarla-bday.mp3')
+    const { play, pause, audioRef } = useAudio('/bday-song.mp3')
 
     useEffect(() => {
         setIsMusicPlaying(true);
