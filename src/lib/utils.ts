@@ -30,7 +30,7 @@ export const lyrics = `
 [01:03.83]With frosty dreams and cozy flair
 [01:07.55]It’s your day—beyond compare!
 
-[01:12.00] 🐻‍❄️🐻‍❄️🐻‍❄️🐻‍❄️🐻‍❄️🐻‍❄️
+[01:12.00] 🐻‍❄️❄️🐻‍❄️❄️🐻‍❄️❄️🐻‍❄️
 
 [01:23.83]Polar bears give you a cheer
 [01:27.07]Glaciers shimmer, skies are clear.
@@ -42,5 +42,5 @@ export const lyrics = `
 [01:43.45]Happy birthday, snowy star
 [01:47.26]You’re our magic, near or far. 
 
-[01:50.26] ♪♪♪
+[01:50.26] 🎂 ♪ ️❄️ ♪ 🐻‍❄️ ♪ 🎂
 `;

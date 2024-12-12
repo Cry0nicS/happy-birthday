@@ -53,6 +53,7 @@ const DancingPolarBear: React.FC<DancingPolarBearProps> = ({
                                                                flipped = false,
                                                                isSecondBear = false
                                                            }) => {
+    const isSinging = isSecondBear && danceMode === 'duet';
 
     // Animations for body movement depending on mode
     const bodyAnimation =
@@ -76,10 +77,12 @@ const DancingPolarBear: React.FC<DancingPolarBearProps> = ({
                 ? { animate: { rotate: [0, 3, 0, -3, 0] }, transition: { duration: 2, repeat: Infinity, ease: "easeInOut" } }
                 : { animate: { rotate: [0, 10, 0, -10, 0] }, transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" } };
 
-    // Mouth shape: more open if second bear singing in duet
-    const mouthPath = isSecondBear && danceMode === 'duet'
-        ? "M140 120 Q150 150 160 120"
-        : "M140 120 Q150 130 160 120";
+    const mouthAnimation = isSinging
+        ? {
+            animate: { d: ['M140 120 Q150 130 160 120', 'M140 120 Q150 150 160 120'] },
+            transition: { duration: 0.5, repeat: Infinity, ease: 'easeInOut' },
+        }
+        : { d: 'M140 120 Q150 130 160 120' };
 
     // Arm configurations
     const leftArmIsStatic = isSecondBear && danceMode === 'duet';
@@ -155,11 +158,13 @@ const DancingPolarBear: React.FC<DancingPolarBearProps> = ({
 
             {/* Nose */}
             <ellipse cx="150" cy="110" rx="12" ry="8" fill="black" />
-
-            {/* Mouth */}
-            <path d={mouthPath} stroke="black" strokeWidth="3" fill="none" />
-
-            {/* Left Arm */}
+            <motion.path
+                d="M140 120 Q150 130 160 120"
+                stroke="black"
+                strokeWidth="3"
+                fill="none"
+                {...mouthAnimation}
+            />
             {leftArmIsStatic ? (
                 // Static arm with microphone: draw a black outline (thicker), then white arm on top
                 <>
