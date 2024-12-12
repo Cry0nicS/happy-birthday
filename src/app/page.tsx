@@ -28,7 +28,7 @@ export default function Home() {
                 )}
             </div>
             {isPlaying && (
-                <div className="pt-6 sw-full flex justify-center">
+                <div className="pt-7 sw-full flex justify-center">
                     <PlayButton
                         isPlaying={isMusicPlaying}
                         setIsPlaying={setIsMusicPlaying}
