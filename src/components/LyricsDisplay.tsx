@@ -57,7 +57,7 @@ export default function LyricsDisplay({ audioRef, lyrics }: LyricsDisplayProps) 
     }, [audioRef, lyricLines]);
 
     return (
-        <div className="text-center text-white mt-8">
+        <div className="text-center text-white pt-20 md:pt-32 xl:pt-40">
             <p className="text-lg md:text-2xl font-semibold">{currentLyric}</p>
         </div>
     );

@@ -221,7 +221,7 @@ const DancingPolarBear: React.FC<DancingPolarBearProps> = ({
                 <g>
                     {/* Cake in right hand area */}
                     <motion.rect
-                        x="200"
+                        x="240"
                         y="150"
                         width="30"
                         height="20"
@@ -233,7 +233,7 @@ const DancingPolarBear: React.FC<DancingPolarBearProps> = ({
                     />
                     {/* Candle */}
                     <motion.rect
-                        x="213"
+                        x="253"
                         y="140"
                         width="4"
                         height="10"
@@ -241,18 +241,18 @@ const DancingPolarBear: React.FC<DancingPolarBearProps> = ({
                     />
                     {/* Flame */}
                     <motion.circle
-                        cx="215"
+                        cx="255"
                         cy="137"
                         r="3"
                         fill="orange"
                     />
                     {/* Happy Birthday text */}
                     <motion.text
-                        x="215"
+                        x="235"
                         y="130"
                         textAnchor="middle"
                         fill="white"
-                        style={{ fontSize: "15px", fontWeight: "bold", textShadow: "2px 2px 4px black"}}
+                        style={{fontSize: "15px", fontWeight: "bold", textShadow: "2px 2px 4px black"}}
                     >
                         Happy Birthday
                     </motion.text>

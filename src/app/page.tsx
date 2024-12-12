@@ -11,9 +11,9 @@ export default function Home() {
     const [isMusicPlaying, setIsMusicPlaying] = useState(false)
 
     return (
-        <main className="h-screen flex flex-col items-center justify-between bg-[#1a202c] overflow-hidden relative py-32">
+        <main className="min-h-screen flex flex-col items-center justify-center bg-[#1a202c] overflow-hidden relative">
             {isPlaying && <Snowfall />}
-            <div className="flex-grow flex items-center justify-center w-full">
+            <div className="flex items-center justify-center w-full">
                 {isPlaying ? (
                     <HeroSection isMusicPlaying={isMusicPlaying} setIsMusicPlaying={setIsMusicPlaying} setIsPlaying={setIsPlaying} />
                 ) : (
@@ -28,7 +28,7 @@ export default function Home() {
                 )}
             </div>
             {isPlaying && (
-                <div className="pt-7 sw-full flex justify-center">
+                <div className="pt-20 md:pt-32 xl:pt-40 sw-full flex justify-center">
                     <PlayButton
                         isPlaying={isMusicPlaying}
                         setIsPlaying={setIsMusicPlaying}

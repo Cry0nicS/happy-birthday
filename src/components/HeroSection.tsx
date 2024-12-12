@@ -63,13 +63,13 @@ export default function HeroSection({ isMusicPlaying, setIsMusicPlaying, setIsPl
 
     return (
         <div className="text-center z-10 relative h-full w-full flex flex-col items-center justify-center">
-            <div className="mb-8 h-24">
+            <div className="h-24">
                 <AnimatePresence>
                     {words.map((word, index) => (
                         currentWordIndex >= index && (
                             <motion.span
                                 key={word}
-                                className="text-2xl md:text-6xl font-bold text-white mr-4"
+                                className="text-3xl md:text-6xl font-bold text-white mr-4"
                                 initial={{ opacity: 0, y: -50 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5 }}
