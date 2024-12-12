@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 const Snowflake = ({ delay }: { delay: number }) => (
     <motion.div
-        className="absolute text-white text-2xl"
+        className="absolute text-white text-opacity-80 text-2xl"
         initial={{ top: "-5%", left: `${Math.random() * 100}%` }}
         animate={{
             top: "105%",
