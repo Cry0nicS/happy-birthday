@@ -267,14 +267,14 @@ const DancingPolarBear: React.FC<DancingPolarBearProps> = ({
               from (130,125) down to (130,135), and mic head at (130,137).
           */}
                     <line
-                        x1="140" y1="155"
+                        x1="147" y1="155"
                         x2="140" y2="175"
                         stroke="black"
                         strokeWidth="6"
                         strokeLinecap="round"
                     />
                     <circle
-                        cx="140"
+                        cx="149"
                         cy="145"
                         r="8"
                         fill="black"
